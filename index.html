@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>免膠繽紛聖誕花環 DIY 教學｜芬妮手作</title>
+<style>
+  :root {
+    --red: #D1483F;
+    --red-deep: #A6342C;
+    --red-soft: #F7DCD9;
+    --red-light: #FCEEEC;
+    --green: #3E7B5A;
+    --gold: #D9A94A;
+    --cream: #FBF6EE;
+    --ink: #2F2A26;
+    --ink-soft: #5B524B;
+    --ink-muted: #8C7E72;
+    --white-warm: #FFFDF9;
+    --line: #E9E1D6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background: var(--cream); color: var(--ink);
+    -webkit-font-smoothing: antialiased; line-height: 1.6;
+  }
+  img, video { display: block; max-width: 100%; }
+
+  .kitbar {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--red); color: #fff;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+  }
+  .kitbar-inner { max-width: 1040px; margin: 0 auto; padding: 8px 12px; }
+  .kitbar-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; opacity: .95; margin: 2px 2px 7px; }
+  .kitbar-scroll {
+    display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px;
+    scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch;
+  }
+  .kitbar-scroll::-webkit-scrollbar { height: 0; }
+  .kit-card {
+    flex: 0 0 auto; scroll-snap-align: start; width: 76px;
+    text-decoration: none; color: #fff; text-align: center;
+  }
+  .kit-card img {
+    width: 72px; height: 72px; border-radius: 14px; object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.55); background: #fff;
+  }
+  .kit-card.featured img { border-color: var(--gold); border-width: 3px; }
+  .kit-card span { display: block; font-size: 11px; line-height: 1.25; margin-top: 4px; }
+  .kit-card.all { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .kit-card.all .allbox {
+    width: 72px; height: 72px; border-radius: 14px; border: 2px dashed rgba(255,255,255,.6);
+    display: flex; align-items: center; justify-content: center; font-size: 26px;
+  }
+
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+
+  /* ========== 主視覺 ========== */
+  .hero {
+    background: linear-gradient(150deg, #D1483F 0%, #8E2B24 100%); color: #fff;
+    text-align: center; padding: 34px 16px 40px;
+  }
+  .hero .tag {
+    display: inline-block; background: rgba(255,255,255,0.18); color:#fff;
+    padding: 5px 14px; border-radius: 20px; font-size: 12px; letter-spacing: 2px; font-weight: 600; margin-bottom: 16px;
+  }
+  .hero h1 { font-size: clamp(27px, 7vw, 46px); font-weight: 800; line-height: 1.25; margin-bottom: 10px; }
+  .hero p { font-size: clamp(15px, 4vw, 19px); color: rgba(255,255,255,.95); max-width: 520px; margin: 0 auto 18px; }
+  .hero-img {
+    width: min(78vw, 340px); aspect-ratio: 1/1; object-fit: cover; margin: 6px auto 20px;
+    border-radius: 20px; box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+  }
+  .btn-buy {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #fff; color: var(--red-deep); text-decoration: none;
+    padding: 14px 26px; border-radius: 30px; font-weight: 800; font-size: clamp(15px,4vw,18px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.22);
+  }
+  .btn-buy:active { transform: translateY(1px); }
+
+  /* ========== 步驟總標 ========== */
+  .steps-head { text-align: center; padding: 34px 16px 6px; }
+  .steps-head .tag { display:inline-block; background: var(--red-soft); color: var(--red-deep); padding: 5px 14px; border-radius: 20px; font-size: 12px; letter-spacing: 2px; font-weight: 700; margin-bottom: 12px; }
+  .steps-head h2 { font-size: clamp(22px, 6vw, 34px); font-weight: 800; }
+  .steps-head p { color: var(--ink-soft); margin-top: 8px; font-size: clamp(14px,3.6vw,17px); }
+
+  /* ========== 單一步驟 ========== */
+  .step { padding: 22px 16px; }
+  .step-inner {
+    max-width: 920px; margin: 0 auto;
+    background: var(--white-warm); border: 1px solid var(--line); border-radius: 22px;
+    overflow: hidden; box-shadow: 0 8px 26px rgba(166,52,44,0.08);
+  }
+  .step-media { width: 100%; max-width: 264px; margin: 18px auto 0; background: #000; aspect-ratio: 9/16; max-height: 56vh; border-radius: 16px; overflow: hidden; }
+  .step-media video { width: 100%; height: 100%; object-fit: cover; background:#000; }
+  .step-body { padding: 20px 20px 24px; }
+  .step-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .step-badge {
+    width: 46px; height: 46px; border-radius: 50%; background: var(--red); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size: 21px; font-weight: 800; flex: 0 0 auto;
+  }
+  .step-head h3 { font-size: clamp(20px, 5.4vw, 28px); font-weight: 800; }
+  .step-list { list-style: none; display: flex; flex-direction: column; gap: 10px; counter-reset: sub; }
+  .step-list li {
+    counter-increment: sub; display: flex; gap: 12px; align-items: flex-start;
+    background: var(--cream); border: 1px solid var(--line); border-radius: 12px;
+    padding: 12px 15px; font-size: clamp(15px, 4vw, 18px); line-height: 1.65;
+  }
+  .step-list li::before {
+    content: counter(sub); flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%;
+    background: var(--red); color: #fff; display:flex; align-items:center; justify-content:center;
+    font-size: 13px; font-weight: 700; margin-top: 1px;
+  }
+  .step-list.single li::before { content: "✓"; }
+  .step-tip {
+    margin-top: 14px; padding: 12px 15px; border-radius: 12px;
+    background: var(--red-soft); color: var(--red-deep); font-weight: 600;
+    font-size: clamp(14px,3.6vw,16px); line-height: 1.6;
+  }
+
+  /* 桌機：影片與文字並排 */
+  @media (min-width: 760px) {
+    .step-inner { display: grid; grid-template-columns: minmax(0,320px) 1fr; align-items: stretch; }
+    .step-media { max-width: none; margin: 0; border-radius: 0; aspect-ratio: 9/16; max-height: none; height: 100%; }
+    .step-body { padding: 26px 28px; align-self: center; }
+  }
+
+  /* ========== 中段 CTA ========== */
+  .midcta { padding: 10px 16px 6px; }
+  .midcta-inner {
+    max-width: 920px; margin: 0 auto; text-align: center;
+    background: linear-gradient(135deg, var(--red-soft), var(--red-light));
+    border: 1px solid var(--line); border-radius: 22px; padding: 24px 20px;
+  }
+  .midcta-inner h3 { font-size: clamp(19px,5vw,26px); font-weight: 800; margin-bottom: 8px; }
+  .midcta-inner p { color: var(--ink-soft); font-size: clamp(14px,3.8vw,17px); margin-bottom: 16px; }
+  .btn-buy-red {
+    display: inline-flex; align-items:center; gap: 8px;
+    background: var(--red); color:#fff; text-decoration:none;
+    padding: 13px 26px; border-radius: 30px; font-weight: 800; font-size: clamp(15px,4vw,18px);
+    box-shadow: 0 10px 26px rgba(166,52,44,.26);
+  }
+  .btn-buy-red:active { transform: translateY(1px); }
+
+  /* ========== 完整聖誕系列 ========== */
+  .series { padding: 34px 16px 10px; }
+  .series-inner { max-width: 920px; margin: 0 auto; text-align: center; }
+  .series-inner h2 { font-size: clamp(21px,5.6vw,30px); font-weight: 800; margin-bottom: 6px; }
+  .series-inner p { color: var(--ink-soft); font-size: clamp(14px,3.6vw,17px); margin-bottom: 18px; }
+  .series-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  @media (min-width: 560px) { .series-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 820px) { .series-grid { grid-template-columns: repeat(4, 1fr); } }
+  .series-card {
+    background: var(--white-warm); border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
+    text-decoration: none; color: var(--ink); box-shadow: 0 4px 14px rgba(166,52,44,.06);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .series-card:hover, .series-card:active { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(166,52,44,.14); }
+  .series-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; }
+  .series-card span { display: block; padding: 9px 8px; font-size: clamp(12px,3.4vw,14px); font-weight: 700; text-align: center; }
+  .btn-all {
+    display: inline-flex; align-items:center; gap: 8px; margin-top: 18px;
+    background: var(--green); color:#fff; text-decoration:none;
+    padding: 13px 26px; border-radius: 28px; font-weight: 800; font-size: clamp(15px,4vw,18px);
+    box-shadow: 0 10px 26px rgba(62,123,90,.24);
+  }
+
+  /* ========== 結尾 ========== */
+  footer { background: var(--red-soft); margin-top: 28px; padding: 30px 16px 40px; text-align: center; }
+  footer .msg { font-size: clamp(15px,4vw,19px); max-width: 560px; margin: 0 auto 6px; }
+  footer .msg strong { color: var(--red); }
+  footer .intro { color: var(--ink-soft); font-size: clamp(13px,3.4vw,16px); max-width: 540px; margin: 10px auto 16px; }
+  .contact-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .contact-card {
+    background: var(--white-warm); border: 1px solid var(--line); border-radius: 16px; padding: 14px 20px;
+    display: flex; flex-direction: column; align-items: center; gap: 3px; width: 150px;
+    text-decoration: none; color: inherit;
+  }
+  .contact-card .ce { font-size: 26px; }
+  .contact-card .cn { font-weight: 700; }
+  .contact-card .cs { font-size: 12px; color: var(--ink-muted); }
+  .foot-mark { margin-top: 22px; font-size: 12px; color: var(--ink-muted); letter-spacing: 1px; }
+
+  /* ========== 準備材料 ========== */
+  .step-badge.prep { background: var(--green); font-size: 15px; }
+  .prep .step-inner { max-width: 600px; }
+  .prep .step-body { padding: 16px 16px 18px; }
+  @media (min-width: 760px) { .prep .step-inner { display: block; } .prep .step-body { padding: 20px 24px; } }
+  .prep .step-head { margin-bottom: 10px; }
+  .mat-list {
+    list-style: none; display: grid; grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--cream);
+  }
+  .mat-list li {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 8px;
+    padding: 7px 12px; font-size: clamp(13px, 3.6vw, 15px); line-height: 1.4;
+    border-bottom: 1px solid var(--line);
+  }
+  .mat-list li:nth-child(odd):not(.wide) { border-right: 1px solid var(--line); }
+  .mat-list li.wide { grid-column: 1 / -1; }
+  .mat-list li:last-child { border-bottom: 0; }
+  .mat-list li b { color: var(--red-deep); white-space: nowrap; }
+  .mat-list li span { color: var(--ink-soft); text-align: right; }
+  .mat-buy {
+    margin-top: 12px; padding: 10px 12px; border-radius: 12px; background: var(--red-soft);
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px;
+    font-size: clamp(13px, 3.5vw, 15px); color: var(--red-deep); font-weight: 600; text-align: center;
+  }
+  .btn-mat {
+    display: inline-block; background: var(--red); color: #fff; text-decoration: none;
+    padding: 6px 14px; border-radius: 20px; font-weight: 800; font-size: clamp(13px, 3.5vw, 15px);
+  }
+  .jump { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 14px; }
+  .jump button {
+    border: 1px solid var(--line); background: var(--white-warm); color: var(--ink);
+    border-radius: 20px; padding: 6px 13px; font-size: 13px; font-weight: 700; font-family: inherit; cursor: pointer;
+  }
+</style>
+<script defer src="analytics.js?v=20261125"></script>
+</head>
+<body>
+
+<!-- 主視覺 -->
+<section class="hero">
+  <span class="tag">FENNY STUDIO 🎄 手作教學</span>
+  <h1>免膠繽紛聖誕花環<br>毛根 DIY 教學</h1>
+  <p>花環主體不用熱熔膠，九個步驟跟著影片做，新手和小朋友都能做 🤍</p>
+  <img class="hero-img" src="steps/hero-done.jpg" alt="完成的免膠繽紛聖誕花環">
+</section>
+
+<section class="steps-head">
+  <span class="tag">動手做</span>
+  <h2>🎄 免膠繽紛聖誕花環｜製作步驟</h2>
+  <p>往下滑，一步一步跟著做。影片點一下就會播放。</p>
+  <div class="jump" aria-label="跳到步驟">
+    <button type="button" data-jump="prep">材料</button><button type="button" data-jump="1">1 繞白圈</button><button type="button" data-jump="2">2 長線</button><button type="button" data-jump="3">3 彈簧</button><button type="button" data-jump="4">4 穿串</button><button type="button" data-jump="5">5 繞花環</button><button type="button" data-jump="6">6 鈴鐺</button><button type="button" data-jump="7">7 掛環</button><button type="button" data-jump="8">8 裝飾</button><button type="button" data-jump="9">9 蝴蝶結</button>
+  </div>
+</section>
+
+<!-- 準備材料 -->
+<section class="step prep" id="step-prep">
+  <div class="step-inner">
+  <div class="step-body">
+    <div class="step-head"><div class="step-badge prep">備</div><h3>🧺 準備材料</h3></div>
+    <ul class="mat-list">
+      <li><b>綠色毛根</b><span>約半捆</span></li>
+      <li><b>白色塑膠圈</b><span>1 個</span></li>
+      <li><b>鉛筆</b><span>捲彈簧用</span></li>
+      <li><b>鈴鐺</b><span>1 個</span></li>
+      <li><b>皮革繩</b><span>1 條</span></li>
+      <li><b>緞帶</b><span>1 條</span></li>
+      <li class="wide"><b>小裝飾</b><span>毛球、小蝴蝶結、雪花等</span></li>
+      <li class="wide"><b>手工膠或保麗龍膠</b><span>貼裝飾用</span></li>
+    </ul>
+  </div>
+  </div>
+</section>
+
+<!-- 步驟 1 -->
+<section class="step" id="step-1">
+  <div class="step-inner">
+    <div class="step-media"><video controls playsinline preload="none" poster="steps/step1-ring-poster.jpg"><source src="steps/step1-ring.mp4" type="video/mp4"></video></div>
+    <div class="step-body">
+      <div class="step-head"><div class="step-badge">1</div><h3>🟢 毛根繞滿白圈</h3></div>
+      <ol class="step-list">
+        <li>毛根頭勾住白色塑膠圈，尾端扭緊固定。</li>
+        <li>一圈一圈緊密地繞，不要留縫。</li>
+        <li>一根繞完，跟下一根的尾端扭在一起，接著繼續繞。</li>
+        <li>繞到最後一段，跟起頭轉圈打一個結，就固定了。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 步驟 2 -->
+<section class="step" id="step-2">
+  <div class="step-inner">
+    <div class="step-media"><video controls playsinline preload="none" poster="steps/step2-line-poster.jpg"><source src="steps/step2-line.mp4" type="video/mp4"></video></div>
+    <div class="step-body">
+      <div class="step-head"><div class="step-badge">2</div><h3>🧵 扭上一根長線</h3></div>
+      <ol class="step-list">
+        <li>在打結的地方勾上一根毛根，扭緊固定。</li>
+        <li>讓它豎起來，這根就是等一下穿彈簧的長線。</li>
+      </ol>
+      <div class="step-tip">💡 小提醒：毛根先留 2 根，當穿彈簧的長線。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 步驟 3 -->
+<section class="step" id="step-3">
+  <div class="step-inner">
+    <div class="step-media"><video controls playsinline preload="none" poster="steps/step3-spring-poster.jpg"><source src="steps/step3-spring.mp4" type="video/mp4"></video></div>
+    <div class="step-body">
+      <div class="step-head"><div class="step-badge">3</div><h3>🌀 捲小彈簧</h3></div>
+      <ol class="step-list">
+        <li>一根毛根靠著鉛筆（直徑約 0.6～0.7 公分），一圈一圈繞。</li>
+        <li>整根繞完，往中間推緊，再從筆上抽出來。</li>
+        <li>總共做 30～35 個小彈簧。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 步驟 4 -->
+<section class="step" id="step-4">
+  <div class="step-inner">
+    <div class="step-media"><video controls playsinline preload="none" poster="steps/step4-string-poster.jpg"><source src="steps/step4-string.mp4" type="video/mp4"></video></div>
+    <div class="step-body">
+      <div class="step-head"><div class="step-badge">4</div><h3>🔗 彈簧穿成長串</h3></div>
+      <ol class="step-list">
+        <li>把小彈簧套進長線，往下推到底。</li>
+        <li>一個接一個穿，穿成一長串。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 步驟 5 -->
+<section class="step" id="step-5">
+  <div class="step-inner">
+    <div class="step-media"><video controls playsinline preload="none" poster="steps/step5-wrap-poster.jpg"><source src="steps/step5-wrap.mp4" type="video/mp4"></video></div>
+    <div class="step-body">
+      <div class="step-head"><div class="step-badge">5</div><h3>🎄 繞成蓬蓬花環</h3></div>
+      <ol class="step-list">
+        <li>彈簧串穿過圓圈中間，一圈一圈繞過去。</li>
+        <li>每繞一圈就往前推緊，花環會慢慢變蓬。</li>
+        <li>長線不夠就再接一根、兩根扭在一起；彈簧用完再穿一些上去，繼續繞。</li>
+        <li>圈圈盡量推緊密，會比較扎實漂亮。最後尾巴在上方扭緊，整理一下形狀。</li>
+      </ol>
+      <div class="step-tip">💡 小提醒：上方的尾巴先留著，等一下要綁掛繩。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 步驟 6 -->
+<section class="step" id="step-6">
+  <div class="step-inner">
+    <div class="step-media"><video controls playsinline preload="none" poster="steps/step6-bell-poster.jpg"><source src="steps/step6-bell.mp4" type="video/mp4"></video></div>
+    <div class="step-body">
+      <div class="step-head"><div class="step-badge">6</div><h3>🔔 掛上鈴鐺</h3></div>
+      <ol class="step-list">
+        <li>鈴鐺放進花環中間，跟中間的毛根一起交叉、扭緊固定。</li>
+        <li>上面再綁一個結，綁緊鈴鐺才不會掉，剪掉多的線。</li>
+      </ol>
+      <div class="step-tip">💡 小提醒：擔心鈴鐺不牢固，可以塗一點熱熔膠固定。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 步驟 7 -->
+<section class="step" id="step-7">
+  <div class="step-inner">
+    <div class="step-media"><video controls playsinline preload="none" poster="steps/step7-loop-poster.jpg"><source src="steps/step7-loop.mp4" type="video/mp4"></video></div>
+    <div class="step-body">
+      <div class="step-head"><div class="step-badge">7</div><h3>🤎 綁上皮繩掛環</h3></div>
+      <ol class="step-list">
+        <li>皮革繩兩端打一個結，拉緊。</li>
+        <li>把皮繩穿進上方的毛根，用毛根尾巴繞過去把皮繩綁住。</li>
+        <li>尾端塞進去藏好，再把皮繩拉緊。</li>
+      </ol>
+      <div class="step-tip">💡 小提醒：擔心掛繩不牢固，可以塗一點熱熔膠固定。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 步驟 8 -->
+<section class="step" id="step-8">
+  <div class="step-inner">
+    <div class="step-media"><video controls playsinline preload="none" poster="steps/step8-deco-poster.jpg"><source src="steps/step8-deco.mp4" type="video/mp4"></video></div>
+    <div class="step-body">
+      <div class="step-head"><div class="step-badge">8</div><h3>✨ 放上裝飾</h3></div>
+      <ul class="step-list single">
+        <li>裝飾一個一個貼上去，顏色和位置照自己喜歡的搭配。</li>
+      </ul>
+      <div class="step-tip">💡 小秘訣：裝飾背面點手工膠，用保麗龍膠也可以。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 步驟 9 -->
+<section class="step" id="step-9">
+  <div class="step-inner">
+    <div class="step-media"><video controls playsinline preload="none" poster="steps/step9-bow-poster.jpg"><source src="steps/step9-bow.mp4" type="video/mp4"></video></div>
+    <div class="step-body">
+      <div class="step-head"><div class="step-badge">9</div><h3>🎀 綁緞帶蝴蝶結</h3></div>
+      <ol class="step-list">
+        <li>緞帶繞過花環上方，打一個蝴蝶結。</li>
+        <li>塗上一點膠，直接貼在花環上。</li>
+        <li>整理蝴蝶結的形狀、把尾巴順一順，完成！</li>
+      </ol>
+      <div class="step-tip">🎁 做好了嗎？掛在牆上、門把上，或裝進禮物袋送人都很可愛。拍張照標記 @fenny.studio，讓芬妮看看你的花環！</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="msg">每一個都是你親手繞出來的，蓬度都不一樣。<br><strong>聖誕快樂！</strong> 🎁</div>
+  <div class="intro">想看更多手作、預約課程或訂製作品，歡迎追蹤・聯絡芬妮手作 🤍</div>
+  <div class="contact-row">
+    <a class="contact-card" href="https://www.instagram.com/fenny.studio/" target="_blank" rel="noopener" data-track-id="b01" data-track-position="footer" data-track-label="📷 Instagram @fenny.studio"><span class="ce">📷</span><span class="cn">Instagram</span><span class="cs">@fenny.studio</span></a>
+    <a class="contact-card" href="https://lin.ee/117MDRD" target="_blank" rel="noopener" data-track-id="b02" data-track-position="footer" data-track-label="💬 LINE 加好友"><span class="ce">💬</span><span class="cn">LINE</span><span class="cs">加好友</span></a>
+  </div>
+  <div class="foot-mark">芬妮手作 Fenny Studio</div>
+</footer>
+
+<script>
+  // 一次只播一支：有人按播放，就把其他影片停下來
+  const vids = Array.from(document.querySelectorAll('video'));
+  vids.forEach(v => v.addEventListener('play', () => {
+    vids.forEach(o => { if (o !== v) o.pause(); });
+  }));
+  // 步驟快速跳轉
+  document.querySelectorAll('[data-jump]').forEach(b => b.addEventListener('click', () => {
+    const t = document.getElementById('step-' + b.dataset.jump);
+    const bar = document.querySelector('.kitbar');
+    if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0) - 8, behavior: 'smooth' });
+  }));
+</script>
+
+</body>
+</html>

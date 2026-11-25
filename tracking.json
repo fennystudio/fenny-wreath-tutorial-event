@@ -1,0 +1,21 @@
+{
+  "version": "20261125",
+  "measurement_id": "G-FEYLE5FWZZ",
+  "event_prefix": "wreath_event_",
+  "page_url": "https://fennystudio.github.io/fenny-wreath-tutorial-event/",
+  "forked_from": "https://fennystudio.github.io/fenny-wreath-tutorial/",
+  "buttons": [
+    {
+      "id": "b01",
+      "label": "📷 Instagram @fenny.studio",
+      "position": "footer",
+      "url": "https://www.instagram.com/fenny.studio/"
+    },
+    {
+      "id": "b02",
+      "label": "💬 LINE 加好友",
+      "position": "footer",
+      "url": "https://lin.ee/117MDRD"
+    }
+  ]
+}
