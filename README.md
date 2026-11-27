@@ -8,4 +8,4 @@
 - GA4 事件前綴 `wreath_event_`，跟公開頁的 `wreath_` 分開，數據不會混在一起。
 
 重建：`python3 _work/cut.py`（切 9 段影片）→ `python3 _work/gen.py`（產 index.html＋tracking.json）→ `node --test tests/tracking.test.js`。
-⚠️ 尚未上線：Sally 本機預覽審過、說可以才建 repo `fennystudio/fenny-wreath-tutorial-event` 並開 Pages。
+2026-11-27 Sally 審過後上線：https://fennystudio.github.io/fenny-wreath-tutorial-event/ （repo `fennystudio/fenny-wreath-tutorial-event`，Pages 走 main 根目錄）。
